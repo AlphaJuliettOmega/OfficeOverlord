@@ -51,12 +51,12 @@ class App extends React.Component<Props, State> {
             email: "",
             address: "",
             workers: [
-              { name: "Jacques Jordaan" },
-              { name: "Daniel Novitzkas" },
-              { name: "Brandon Watkins" },
-              { name: "Ryan Duell" },
-              { name: "Jenner Venter" },
-              { name: "Janke B Du Toit" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
             ],
           },
           {
@@ -66,12 +66,12 @@ class App extends React.Component<Props, State> {
             email: "",
             address: "",
             workers: [
-              { name: "Jacques Jordaan" },
-              { name: "Daniel Novitzkas" },
-              { name: "Brandon Watkins" },
-              { name: "Ryan Duell" },
-              { name: "Jenner Venter" },
-              { name: "Janke B Du Toit" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
             ],
           },
           {
@@ -81,12 +81,12 @@ class App extends React.Component<Props, State> {
             email: "",
             address: "",
             workers: [
-              { name: "Jacques Jordaan" },
-              { name: "Daniel Novitzkas" },
-              { name: "Brandon Watkins" },
-              { name: "Ryan Duell" },
-              { name: "Jenner Venter" },
-              { name: "Janke B Du Toit" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
             ],
           },
           {
@@ -96,12 +96,12 @@ class App extends React.Component<Props, State> {
             email: "",
             address: "",
             workers: [
-              { name: "Jacques Jordaan" },
-              { name: "Daniel Novitzkas" },
-              { name: "Brandon Watkins" },
-              { name: "Ryan Duell" },
-              { name: "Jenner Venter" },
-              { name: "Janke B Du Toit" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
+              { name: "Worker Name Here" },
             ],
           },
         ],
@@ -117,8 +117,10 @@ class App extends React.Component<Props, State> {
       this.state,
       newIndex
     );
+    this.updateSelectedOffice(newIndex);
     this.updateScreenIndex(1);
   };
+
   selectWorker = (newIndex: number) => {
     this.setState({ selectedWorkerIndex: newIndex });
     console.log(
@@ -127,6 +129,7 @@ class App extends React.Component<Props, State> {
       this.state,
       newIndex
     );
+    this.updateSelectedWorker(newIndex);
     this.updateScreenIndex(2);
   };
 
@@ -135,8 +138,9 @@ class App extends React.Component<Props, State> {
 
   render() {
     const { name } = this.props;
-    const { screenIndex } = this.state;
-    if (this.state.currentEnthusiasm <= 0) {
+    const { screenIndex, selectedOfficeIndex, officeSpace, currentEnthusiasm } =
+      this.state;
+    if (currentEnthusiasm <= 0) {
       throw new Error("You could be a little more enthusiastic. :D");
     }
 
@@ -145,16 +149,16 @@ class App extends React.Component<Props, State> {
         <div className="screen-wrapper">
           {(screenIndex === undefined || screenIndex === 0) && (
             <Home
-              officeSpace={this.state.officeSpace}
-              selectOfficeHandler={(index) => this.selectOffice(index)}
-              selectWorkerHandler={(index) => this.selectWorker(index)}
+              officeSpace={officeSpace}
+              selectOfficeHandler={this.selectOffice}
+              selectWorkerHandler={this.selectWorker}
             />
           )}
           {screenIndex === 1 && (
             <OfficeEdit
               name={name}
-              officeSpace={this.state.officeSpace}
-              selectedOfficeIndex={this.state.selectedOfficeIndex}
+              officeSpace={officeSpace}
+              selectedOfficeIndex={selectedOfficeIndex}
               back={() => this.setState({ screenIndex: 0 })}
             ></OfficeEdit>
           )}
@@ -162,7 +166,7 @@ class App extends React.Component<Props, State> {
           {screenIndex === 3 && (
             <div className="hello">
               <div className="greeting">
-                Hello {name + getExclamationMarks(this.state.currentEnthusiasm)}
+                Hello {name + getExclamationMarks(currentEnthusiasm)}
               </div>
               <button onClick={this.onDecrement}>-</button>
               <button onClick={this.onIncrement}>+</button>
@@ -204,6 +208,15 @@ class App extends React.Component<Props, State> {
   updateScreenIndex(screenIndex: number) {
     console.log("updating screenIndex:", screenIndex);
     this.setState({ screenIndex });
+  }
+
+  updateSelectedOffice(officeId: number) {
+    console.log("updating selectedOffice:", officeId);
+    this.setState({ selectedOfficeIndex: officeId });
+  }
+
+  updateSelectedWorker(workerId: number) {
+    this.setState({ selectedWorkerIndex: workerId });
   }
 }
 

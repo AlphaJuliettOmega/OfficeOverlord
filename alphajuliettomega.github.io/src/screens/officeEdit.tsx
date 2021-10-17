@@ -63,6 +63,12 @@ class OfficeEdit extends React.Component<Props, State> {
 
   render() {
     const { name } = this.props;
+    console.log(
+      "[DEBUG]",
+      "Rendering Office:",
+      this.props.officeSpace.offices,
+      this.props.selectedOfficeIndex
+    );
 
     if (this.state.currentEnthusiasm <= 0) {
       throw new Error("You could be a little more enthusiastic. :D");

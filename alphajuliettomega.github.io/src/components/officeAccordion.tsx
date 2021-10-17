@@ -42,6 +42,7 @@ function OfficeAccordion(props: {
         <IconButton
           className="button-edit"
           onClick={() => {
+            console.log("[DEBUG]", "Pressed office:", props.index);
             props.selectOfficeHandler(props.index);
           }}
         >
