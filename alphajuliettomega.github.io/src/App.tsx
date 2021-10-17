@@ -3,7 +3,7 @@
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import * as React from "react";
 import Demo from "./screens/Demo";
-import Hello from "./screens/hello";
+import OfficeEdit from "./screens/officeEdit";
 import Home from "./screens/home";
 import { Manager } from "./models/manager";
 import Paper from "@mui/material/Paper";
@@ -108,6 +108,7 @@ class App extends React.Component<Props, State> {
       },
     };
   }
+
   selectOffice = (newIndex: number) => {
     this.setState({ selectedOfficeIndex: newIndex });
     console.log(
@@ -116,6 +117,7 @@ class App extends React.Component<Props, State> {
       this.state,
       newIndex
     );
+    this.updateScreenIndex(1);
   };
   selectWorker = (newIndex: number) => {
     this.setState({ selectedWorkerIndex: newIndex });
@@ -125,6 +127,7 @@ class App extends React.Component<Props, State> {
       this.state,
       newIndex
     );
+    this.updateScreenIndex(2);
   };
 
   onIncrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm + 1);
@@ -147,7 +150,14 @@ class App extends React.Component<Props, State> {
               selectWorkerHandler={(index) => this.selectWorker(index)}
             />
           )}
-          {screenIndex === 1 && <Hello name={name}></Hello>}
+          {screenIndex === 1 && (
+            <OfficeEdit
+              name={name}
+              officeSpace={this.state.officeSpace}
+              selectedOfficeIndex={this.state.selectedOfficeIndex}
+              back={() => this.setState({ screenIndex: 0 })}
+            ></OfficeEdit>
+          )}
           {screenIndex === 2 && <Demo></Demo>}
           {screenIndex === 3 && (
             <div className="hello">
@@ -159,7 +169,7 @@ class App extends React.Component<Props, State> {
             </div>
           )}
         </div>
-        <Paper
+        {/* <Paper
           sx={{
             position: "fixed",
             bottom: 0,
@@ -181,7 +191,7 @@ class App extends React.Component<Props, State> {
             <BottomNavigationAction label="Worker" icon={<HomeIcon />} />
             <BottomNavigationAction label="Other" icon={<HomeIcon />} />
           </BottomNavigation>
-        </Paper>
+        </Paper> */}
       </>
     );
   }

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { Office } from "../models/office";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-
+import GroupIcon from "@mui/icons-material/Group";
 function OfficeAccordion(props: {
   office: Office;
   index: number;
@@ -24,6 +24,15 @@ function OfficeAccordion(props: {
             {props.office.name}
           </Typography>
           <Typography fontWeight={500} flexDirection="row">
+            <GroupIcon
+              sx={{
+                fontSize: 20,
+                color: "#489DDA",
+                marginTop: "-3px",
+                marginRight: 1,
+                verticalAlign: "middle",
+              }}
+            ></GroupIcon>
             <Typography fontWeight={800} display="inline">
               {props.office.officeCapacity + " "}
             </Typography>

@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Manager } from "../models/manager";
 
-import Hello from "./hello";
 import Demo, { theme } from "./Demo";
 import logo from "../assets/logo.svg";
 import {
@@ -11,6 +10,7 @@ import {
   Chip,
   Divider,
   IconButton,
+  Paper,
   Stack,
   Switch,
   Typography,
@@ -47,38 +47,6 @@ function Home(props: {
           );
         })}
 
-        <h2>Staff Members In Office</h2>
-        {props.officeSpace.offices.map((office: Office) => {
-          return office.workers.map((worker: OfficeWorker) => {
-            return (
-              <Card className="card-worker">
-                <Stack direction="row" justifyContent="space-between">
-                  <Avatar
-                    variant="rounded"
-                    src="https://placekitten.com/300/300"
-                    className="avatar-worker"
-                  />
-                  <Stack spacing={0.5} justifyContent="flex-start">
-                    <Typography
-                      className="card-worker-heading"
-                      fontWeight={700}
-                    >
-                      {worker.name}
-                    </Typography>
-                    {/* <Typography variant="body2" color="text.secondary">
-                      <LocationOn sx={{ color: theme.colors.grey }} /> Scranton,
-                      PA
-                    </Typography> */}
-                  </Stack>
-                  <IconButton className="button-edit">
-                    <EditOutlined sx={{ fontSize: 14 }} />
-                  </IconButton>
-                </Stack>
-              </Card>
-            );
-          });
-        })}
-
         <h4>Objective</h4>
         <p>Create an application that satisfies the following cases</p>
         <p>The system must allow users to create and manage office space.</p>
@@ -100,17 +68,22 @@ function Home(props: {
           This component must filter the list of users within the office as the
           user is typing.
         </p>
-        <p>The system is designed for phones.</p>
-        <p>
-          Styles need to be put into place to stop the main view from getting
-          too wide.
-        </p>
       </header>
       <div className="App-header"></div>
-      <p className="App-intro">sadgasdgasdg</p>
-      <Fab color="primary" aria-label="add">
-        <AddIcon />
-      </Fab>
+      <Paper
+        sx={{
+          position: "fixed",
+          bottom: 0,
+          width: "30vw",
+          right: 0,
+          backgroundColor: "transparent",
+        }}
+        elevation={0}
+      >
+        <Fab color="primary" className={"button-fab"} aria-label="add">
+          <AddIcon />
+        </Fab>
+      </Paper>
     </div>
   );
 }

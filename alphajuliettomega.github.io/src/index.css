@@ -108,6 +108,7 @@ code {
   padding: 16px;
   padding-left: 32px;
   padding-bottom: 0px;
+  margin-bottom: 32px;
 }
 
 .card-worker {
@@ -122,7 +123,7 @@ code {
 }
 
 .card-worker-heading {
-  margin-top: 8px!important;
+  margin-top: 8px !important;
 }
 
 .card-highlight {
@@ -142,4 +143,8 @@ code {
 
 .button-edit {
   align-self: flex-start;
+}
+
+.button-fab {
+  margin-bottom: 5vh !important;
 }
