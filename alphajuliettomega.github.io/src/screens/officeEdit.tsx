@@ -1,15 +1,11 @@
-// src/components/StatefulHello.tsx
-
 import { EditOutlined } from "@mui/icons-material";
 import { Card, Stack, Avatar, Typography, IconButton } from "@mui/material";
 import * as React from "react";
 import { Manager } from "../models/manager";
-import { Office } from "../models/office";
 import { OfficeWorker } from "../models/worker";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export interface Props {
-  name: string;
   enthusiasmLevel?: number;
   officeSpace: Manager;
   selectedOfficeIndex: number | undefined;
@@ -46,10 +42,6 @@ class OfficeEdit extends React.Component<Props, State> {
                 <Typography className="card-worker-heading" fontWeight={700}>
                   {worker.name}
                 </Typography>
-                {/* <Typography variant="body2" color="text.secondary">
-                      <LocationOn sx={{ color: theme.colors.grey }} /> Scranton,
-                      PA
-                    </Typography> */}
               </Stack>
               <IconButton className="button-edit">
                 <EditOutlined sx={{ fontSize: 14 }} />
@@ -62,14 +54,12 @@ class OfficeEdit extends React.Component<Props, State> {
   };
 
   render() {
-    const { name } = this.props;
     console.log(
       "[DEBUG]",
       "Rendering Office:",
       this.props.officeSpace.offices,
       this.props.selectedOfficeIndex
     );
-
     if (this.state.currentEnthusiasm <= 0) {
       throw new Error("You could be a little more enthusiastic. :D");
     }
@@ -83,11 +73,8 @@ class OfficeEdit extends React.Component<Props, State> {
           <div className="hello">
             <h2>Staff Members In Office</h2>
             {this.workerView()}
-            <div className="greeting">
-              Hello {name + getExclamationMarks(this.state.currentEnthusiasm)}
-            </div>
-            <button onClick={this.onDecrement}>-</button>
-            <button onClick={this.onIncrement}>+</button>
+            {/* <button onClick={this.onDecrement}>-</button>
+            <button onClick={this.onIncrement}>+</button> */}
           </div>
         </header>
       </div>

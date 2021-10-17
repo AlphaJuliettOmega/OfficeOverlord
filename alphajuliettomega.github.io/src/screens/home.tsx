@@ -1,28 +1,12 @@
 import * as React from "react";
 import { Manager } from "../models/manager";
 
-import Demo, { theme } from "./Demo";
-import logo from "../assets/logo.svg";
-import {
-  Avatar,
-  Button,
-  Card,
-  Chip,
-  Divider,
-  IconButton,
-  Paper,
-  Stack,
-  Switch,
-  Typography,
-} from "@mui/material";
-import { LocationOn, Edit, EditOutlined } from "@mui/icons-material";
+import { Paper } from "@mui/material";
 import { Office } from "../models/office";
-import { OfficeWorker } from "../models/worker";
 import OfficeAccordion from "../components/officeAccordion";
 
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 function Home(props: {
   officeSpace: Manager;
   selectOfficeHandler: (newIndex: number) => void;
@@ -47,13 +31,9 @@ function Home(props: {
           );
         })}
 
-        <h4>Objective</h4>
-        <p>Create an application that satisfies the following cases</p>
+        <h4>Remaining Objectives</h4>
+        <p>Improve the application that satisfies the following cases</p>
         <p>The system must allow users to create and manage office space.</p>
-        <p>
-          The home page must be a view of current offices and a brief summary of
-          the occupants.
-        </p>
         <p>A user must then be able to add a new office.</p>
         <p>Once an office is added it must appear on the home page.</p>
         <p>

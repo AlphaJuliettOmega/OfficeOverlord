@@ -1,15 +1,9 @@
-// / src/components/StatefulHello.tsx
-
-import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 import * as React from "react";
 import Demo from "./screens/Demo";
 import OfficeEdit from "./screens/officeEdit";
 import Home from "./screens/home";
 import { Manager } from "./models/manager";
-import Paper from "@mui/material/Paper";
-import HomeIcon from "@mui/icons-material/Home";
 export interface Props {
-  name: string;
   enthusiasmLevel?: number;
 }
 
@@ -27,7 +21,7 @@ class App extends React.Component<Props, State> {
     this.state = {
       currentEnthusiasm: props.enthusiasmLevel || 1,
       officeSpace: {
-        name: this.props.name,
+        name: "Overlord Name",
         offices: [
           {
             name: "Specno",
@@ -137,7 +131,6 @@ class App extends React.Component<Props, State> {
   onDecrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm - 1);
 
   render() {
-    const { name } = this.props;
     const { screenIndex, selectedOfficeIndex, officeSpace, currentEnthusiasm } =
       this.state;
     if (currentEnthusiasm <= 0) {
@@ -156,7 +149,6 @@ class App extends React.Component<Props, State> {
           )}
           {screenIndex === 1 && (
             <OfficeEdit
-              name={name}
               officeSpace={officeSpace}
               selectedOfficeIndex={selectedOfficeIndex}
               back={() => this.setState({ screenIndex: 0 })}
@@ -173,29 +165,6 @@ class App extends React.Component<Props, State> {
             </div>
           )}
         </div>
-        {/* <Paper
-          sx={{
-            position: "fixed",
-            bottom: 0,
-            left: 0,
-            right: 0,
-          }}
-          elevation={3}
-        >
-          <BottomNavigation
-            showLabels
-            value={this.state.screenIndex}
-            onChange={(event, newValue) => {
-              this.updateScreenIndex(newValue);
-            }}
-            className="nav-container"
-          >
-            <BottomNavigationAction label="Overview" icon={<HomeIcon />} />
-            <BottomNavigationAction label="Office" icon={<HomeIcon />} />
-            <BottomNavigationAction label="Worker" icon={<HomeIcon />} />
-            <BottomNavigationAction label="Other" icon={<HomeIcon />} />
-          </BottomNavigation>
-        </Paper> */}
       </>
     );
   }

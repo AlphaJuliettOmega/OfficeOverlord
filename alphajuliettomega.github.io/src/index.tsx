@@ -6,7 +6,7 @@ import App from "./App";
 try {
   ReactDOM.render(
     <React.StrictMode>
-      <App name={"Jackson Steel"} />
+      <App />
     </React.StrictMode>,
     document.getElementById("root") as HTMLElement
   );
