@@ -157,9 +157,7 @@ class App extends React.Component<Props, State> {
           {screenIndex === 2 && <Demo></Demo>}
           {screenIndex === 3 && (
             <div className="hello">
-              <div className="greeting">
-                Hello {name + getExclamationMarks(currentEnthusiasm)}
-              </div>
+              <p>This is a test screen</p>
               <button onClick={this.onDecrement}>-</button>
               <button onClick={this.onIncrement}>+</button>
             </div>
