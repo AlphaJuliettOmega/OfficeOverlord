@@ -1,23 +1,22 @@
 {
   "files": {
-    "main.css": "/OfficeOverlord/static/css/main.a617e044.chunk.css",
-    "main.js": "/OfficeOverlord/static/js/main.f4dd6fb4.chunk.js",
-    "main.js.map": "/OfficeOverlord/static/js/main.f4dd6fb4.chunk.js.map",
-    "runtime-main.js": "/OfficeOverlord/static/js/runtime-main.098c04b0.js",
-    "runtime-main.js.map": "/OfficeOverlord/static/js/runtime-main.098c04b0.js.map",
-    "static/js/2.d6e1e404.chunk.js": "/OfficeOverlord/static/js/2.d6e1e404.chunk.js",
-    "static/js/2.d6e1e404.chunk.js.map": "/OfficeOverlord/static/js/2.d6e1e404.chunk.js.map",
-    "static/js/3.d935efc2.chunk.js": "/OfficeOverlord/static/js/3.d935efc2.chunk.js",
-    "static/js/3.d935efc2.chunk.js.map": "/OfficeOverlord/static/js/3.d935efc2.chunk.js.map",
+    "main.css": "/OfficeOverlord/static/css/main.018f6c8d.chunk.css",
+    "main.js": "/OfficeOverlord/static/js/main.a1547e24.chunk.js",
+    "main.js.map": "/OfficeOverlord/static/js/main.a1547e24.chunk.js.map",
+    "runtime-main.js": "/OfficeOverlord/static/js/runtime-main.5405f427.js",
+    "runtime-main.js.map": "/OfficeOverlord/static/js/runtime-main.5405f427.js.map",
+    "static/js/2.8cd575d6.chunk.js": "/OfficeOverlord/static/js/2.8cd575d6.chunk.js",
+    "static/js/2.8cd575d6.chunk.js.map": "/OfficeOverlord/static/js/2.8cd575d6.chunk.js.map",
+    "static/js/3.3bd11cdc.chunk.js": "/OfficeOverlord/static/js/3.3bd11cdc.chunk.js",
+    "static/js/3.3bd11cdc.chunk.js.map": "/OfficeOverlord/static/js/3.3bd11cdc.chunk.js.map",
     "index.html": "/OfficeOverlord/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/OfficeOverlord/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.d6e1e404.chunk.js.LICENSE.txt": "/OfficeOverlord/static/js/2.d6e1e404.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/OfficeOverlord/static/media/logo.6ce24c58.svg"
+    "static/css/main.018f6c8d.chunk.css.map": "/OfficeOverlord/static/css/main.018f6c8d.chunk.css.map",
+    "static/js/2.8cd575d6.chunk.js.LICENSE.txt": "/OfficeOverlord/static/js/2.8cd575d6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.098c04b0.js",
-    "static/js/2.d6e1e404.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.f4dd6fb4.chunk.js"
+    "static/js/runtime-main.5405f427.js",
+    "static/js/2.8cd575d6.chunk.js",
+    "static/css/main.018f6c8d.chunk.css",
+    "static/js/main.a1547e24.chunk.js"
   ]
 }
