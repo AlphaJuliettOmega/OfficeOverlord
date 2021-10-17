@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ],
+  "paths": {
+    "*": [
+      "src/*"
+    ],
+    "tests": [
+      "tests/*"
+    ],
+    "@components/*": [
+      "src/components/*"
+    ],
+    "@models/*": [
+      "src/models/*"
+    ],
+    "@screens/*": [
+      "src/screens/*"
+    ],
+    "@theme/*": [
+      "src/theme/*"
+    ],
+    "@assets/*": [
+      "src/assets/*"
+    ],
+  } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */,
+}
